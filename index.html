@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>Weather App</title>
+    <script src="https://kit.fontawesome.com/a999f82a4b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6 col-lg-3 select_container">
+                <h5 class="select_title">Choose your city</h5>
+                <select name="city" class="custom-select select">
+                    <option value="london">London</option>
+                    <option value="warsaw">Warsaw</option>
+                    <option value="gdynia">Gdynia</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-md-8 col-lg-6 align-self-center app-container">
+
+                <div class="city">
+                    <div id="date" class="date">16:38 23.11.2019</div>
+                    <span id="city">London</span>, <span id="country">GB</span>
+                </div>
+
+                <div class="temperature_details">
+                    <i class="fas fa-thermometer-quarter"></i> Min. <span id="tempMin">279.15</span>F |
+                    <i class="fas fa-thermometer-three-quarters"></i> Max. <span id="tempMax">281.15</span>F
+                </div>
+
+                <div class="temperature">
+                    <span id="temp">280.32</span>F
+                </div>
+
+                <div class="weather">
+                    <div id="icon" class="weather_icon"><i class="fas fa-cloud-moon-rain"></i></div>
+                    <div class="weather_info">
+                        <div class="weather_title">
+                            <h3 id="weatherTitle">Drizzle</h3>
+                        </div>
+
+                        <div class="weather_description">
+                            <p id="weatherDescription">light intensity drizzle</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather_details">
+                    <div class="weather_pressure"><i class="fas fa-tachometer-alt"></i> <span id="pressure">1012</span>
+                        hpa</div>
+                    <div class="weather_wind"><i class="fas fa-wind"></i> <span id="wind">4.1</span> m/s</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./js/main.js"></script>
+
+</html>
