@@ -19,12 +19,15 @@
 
         <div class="row justify-content-center">
             <div class="col-10 col-md-6 col-lg-3 select_container">
-                <h5 class="select_title">Choose your city</h5>
-                <select name="city" class="custom-select select">
+                <h5 class="select_title">Choose city:</h5>
+                <button class="btn btn-secondary" type="button" id="btnGdansk">Gdańsk</button>
+                <button class="btn btn-secondary" type="button" id="btnSopot">Sopot</button>
+                <button class="btn btn-secondary" type="button" id="btnGdynia">Gdynia</button>
+                <!-- <select name="city" class="custom-select select">
                     <option value="london">London</option>
                     <option value="warsaw">Warsaw</option>
                     <option value="gdynia">Gdynia</option>
-                </select>
+                </select> -->
             </div>
         </div>
 
@@ -38,16 +41,18 @@
                 </div>
 
                 <div class="temperature_details">
-                    <i class="fas fa-thermometer-quarter"></i> Min. <span id="tempMin">279.15</span>F |
-                    <i class="fas fa-thermometer-three-quarters"></i> Max. <span id="tempMax">281.15</span>F
+                    <i class="fas fa-thermometer-quarter"></i> Min. <span id="tempMin">279.15</span>°C |
+                    <i class="fas fa-thermometer-three-quarters"></i> Max. <span id="tempMax">281.15</span>°C
                 </div>
 
                 <div class="temperature">
-                    <span id="temp">280.32</span>F
+                    <span id="temp">280.32</span>°C
                 </div>
 
                 <div class="weather">
-                    <div id="icon" class="weather_icon"><i class="fas fa-cloud-moon-rain"></i></div>
+                    <div class="weather_icon"><img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png"
+                            alt="weather-icon"></div>
+
                     <div class="weather_info">
                         <div class="weather_title">
                             <h3 id="weatherTitle">Drizzle</h3>
