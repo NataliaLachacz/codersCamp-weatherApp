@@ -1,6 +1,6 @@
 # codersCamp-weatherApp
 
-<a href="https://natalialachacz.github.io/codersCamp-weatherApp/"><img src="./img/screen.png"></a>
+<a href="https://natalialachacz.github.io/codersCamp-weatherApp/"><img src="https://i.ibb.co/MCp7YH1/screen.png"></a>
 
 ## <a href="https://natalialachacz.github.io/codersCamp-weatherApp/"><b>DEMO</b></a>
 

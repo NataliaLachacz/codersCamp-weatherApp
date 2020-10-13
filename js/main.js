@@ -21,9 +21,6 @@ const chooseCity = () => {
     cityName = cityInput.value;
     apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=21a88e42777ae08261467dcb8e0bb323&units=metric`
     loadApi();
-    // cityName = '';
-    // cityName += value;
-    // loadApi();
 }
 
 const pressSearch = (e) => {
