@@ -5,3 +5,6 @@
 
 ### Photo
 <a href="http://unsplash.com">Unsplash</a>
+
+##### <i>HTML5, CSS3, bootstrap, fontawesome, google fonts</i>
+

@@ -1,5 +1,5 @@
-let idCity = 3099424;
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
+let cityName= 'Warszawa';
+let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=21a88e42777ae08261467dcb8e0bb323&units=metric`;
 
 const date = document.querySelector("#date");
 const city = document.querySelector("#city");
@@ -16,22 +16,39 @@ const wind = document.querySelector("#wind");
 const now = new Date();
 date.textContent = `${(now.getHours() < 10) ? ("0" + now.getHours()) : now.getHours()}:${(now.getMinutes() < 10) ? ("0" + now.getMinutes()) : now.getMinutes()} ${(now.getDate() < 10) ? ("0" + now.getDate()) : now.getDate()}.${(now.getMonth()+1 < 10) ? ("0" + now.getMonth()+1) : (now.getMonth()+1)}.${now.getFullYear()}`;
 
-const chooseId = (e) => {
-    if (e.target.innerText === "Gdańsk") {
-        idCity = 7531890;
-        apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
+const cityInput = document.querySelector("#cityInput");
+const chooseCity = () => {
+    cityName = cityInput.value;
+    apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=21a88e42777ae08261467dcb8e0bb323&units=metric`
+    loadApi();
+    // cityName = '';
+    // cityName += value;
+    // loadApi();
+}
 
-        loadApi();
-    } else if (e.target.innerText === "Sopot") {
-        idCity = 7531444;
-        apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
-        loadApi();
-    } else if (e.target.innerText === "Gdynia") {
-        idCity = 3099424;
-        apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
-        loadApi();
+const pressSearch = (e) => {
+    if(e.keyCode === 13) {
+        e.preventDefault();
+        searchButton.click();
     }
 }
+
+// const chooseCity = (e) => {
+//     if (e.target.innerText === "Gdańsk") {
+//         idCity = 7531890;
+//         apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
+
+//         loadApi();
+//     } else if (e.target.innerText === "Sopot") {
+//         idCity = 7531444;
+//         apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
+//         loadApi();
+//     } else if (e.target.innerText === "Gdynia") {
+//         idCity = 3099424;
+//         apiUrl = `http://api.openweathermap.org/data/2.5/weather?id=${idCity}&units=metric&APPID=21a88e42777ae08261467dcb8e0bb323`;
+//         loadApi();
+//     }
+// }
 
 function loadApi() {
     fetch(apiUrl)
@@ -52,6 +69,10 @@ function loadApi() {
 
 loadApi();
 
-btnGdansk.addEventListener('click', chooseId);
-btnSopot.addEventListener('click', chooseId);
-btnGdynia.addEventListener('click', chooseId);
+const searchButton = document.querySelector("#searchButton");
+searchButton.addEventListener('click', chooseCity);
+cityInput.addEventListener('keyup', pressSearch)
+
+// btnGdansk.addEventListener('click', chooseId);
+// btnSopot.addEventListener('click', chooseId);
+// btnGdynia.addEventListener('click', chooseId);
