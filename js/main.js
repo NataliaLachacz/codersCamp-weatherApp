@@ -20,7 +20,7 @@ const cityInput = document.querySelector("#cityInput");
 const chooseCity = () => {
     cityName = cityInput.value;
     apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=21a88e42777ae08261467dcb8e0bb323&units=metric`
-    loadApi();
+    loadApi();      
 }
 
 const pressSearch = (e) => {
@@ -34,7 +34,12 @@ function loadApi() {
     fetch(apiUrl)
         .then(resp => resp.json())
         .then(resp => {
-            city.textContent = resp.name;
+            if (resp.name === undefined) {
+                alert("I don't know this city. Try again!");
+                return;
+            } else {
+                city.textContent = resp.name;
+            }
             country.textContent = resp.sys.country;
             tempMin.textContent = resp.main.temp_min;
             tempMax.textContent = resp.main.temp_max;
